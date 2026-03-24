@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
-a = Vector2(-80, 0)
-b = Vector2(80, 0)
+a = Vector2(-128, 0)
+b = Vector2(128, 0)
 
 [sub_resource type="Gradient" id="Gradient_4peif"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -16,6 +16,8 @@ gradient = SubResource("Gradient_4peif")
 
 [node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=693361285]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1944801384 groups=["Ground"]]
 position = Vector2(0, 20)
 
@@ -26,5 +28,3 @@ shape = SubResource("SegmentShape2D_jiiil")
 position = Vector2(0, 8.75)
 scale = Vector2(1, 18.5)
 texture = SubResource("GradientTexture1D_jiiil")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=693361285]

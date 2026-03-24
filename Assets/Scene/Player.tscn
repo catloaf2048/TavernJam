@@ -7,6 +7,17 @@ friction = 0.2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6aqw4"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_otfaf"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="Gradient" id="Gradient_otfaf"]
+colors = PackedColorArray(0, 0.2913335, 0.92, 1, 0, 0.2901961, 0.92156863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_edcop"]
+gradient = SubResource("Gradient_otfaf")
+width = 1
+
 [sub_resource type="Gradient" id="Gradient_6aqw4"]
 colors = PackedColorArray(0, 0, 0, 0.5176471, 1, 1, 1, 1)
 
@@ -28,7 +39,12 @@ groundCheck = NodePath("GroundCheck")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094130291]
 shape = SubResource("CapsuleShape2D_6aqw4")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=2062827546]
+mesh = SubResource("CapsuleMesh_otfaf")
+texture = SubResource("GradientTexture1D_edcop")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1949950256]
+visible = false
 texture = SubResource("GradientTexture2D_otfaf")
 
 [node name="GroundCheck" type="Area2D" parent="." unique_id=470305319]
