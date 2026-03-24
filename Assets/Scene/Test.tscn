@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
+
+[ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
+a = Vector2(-80, 0)
+b = Vector2(80, 0)
+
+[sub_resource type="Gradient" id="Gradient_4peif"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jiiil"]
+gradient = SubResource("Gradient_4peif")
+
+[node name="Node2D" type="Node2D" unique_id=2143129917]
+
+[node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1944801384]
+position = Vector2(0, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1878543670]
+shape = SubResource("SegmentShape2D_jiiil")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1725641389]
+position = Vector2(0, 8.75)
+scale = Vector2(1, 18.5)
+texture = SubResource("GradientTexture1D_jiiil")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=693361285]
