@@ -13,7 +13,7 @@ width = 20
 height = 30
 fill_from = Vector2(0, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1999478232]
+[node name="Player" type="RigidBody2D" unique_id=17811856]
 script = ExtResource("1_otfaf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094130291]
