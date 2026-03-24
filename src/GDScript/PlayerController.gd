@@ -4,13 +4,13 @@ extends RigidBody2D
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -400.0
 
-@export var Raycast:Area2D;
+@export var groundCheck:Area2D;
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	var ground:bool = false;
-	for x in Raycast.get_overlapping_bodies():
+	for x in groundCheck.get_overlapping_bodies():
 		if(x.is_in_group('Ground')):
 			ground=true;
 			break;

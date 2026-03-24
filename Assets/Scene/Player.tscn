@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://decrtfnrxnm81" path="res://src/GDScript/PlayerController.gd" id="1_otfaf"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otfaf"]
+friction = 0.2
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6aqw4"]
 
 [sub_resource type="Gradient" id="Gradient_6aqw4"]
@@ -13,11 +16,23 @@ width = 20
 height = 30
 fill_from = Vector2(0, 1)
 
-[node name="Player" type="RigidBody2D" unique_id=17811856]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otfaf"]
+size = Vector2(10, 5)
+
+[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck")]
+physics_material_override = SubResource("PhysicsMaterial_otfaf")
+lock_rotation = true
 script = ExtResource("1_otfaf")
+groundCheck = NodePath("GroundCheck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094130291]
 shape = SubResource("CapsuleShape2D_6aqw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1949950256]
 texture = SubResource("GradientTexture2D_otfaf")
+
+[node name="GroundCheck" type="Area2D" parent="." unique_id=470305319]
+position = Vector2(0, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck" unique_id=2101167627]
+shape = SubResource("RectangleShape2D_otfaf")

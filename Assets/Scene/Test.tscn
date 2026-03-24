@@ -16,8 +16,8 @@ gradient = SubResource("Gradient_4peif")
 
 [node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1944801384]
-position = Vector2(0, 30)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1944801384 groups=["Ground"]]
+position = Vector2(0, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1878543670]
 shape = SubResource("SegmentShape2D_jiiil")
