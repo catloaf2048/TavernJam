@@ -13,6 +13,10 @@ func _ready() -> void:
 	hitbox.body_entered.connect(TriggerEntered);
 	pass # Replace with function body.
 
+func _enter_tree() -> void:
+	print(name)
+	pass;
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func TriggerEntered(node:Node2D):
 	if node.is_in_group(TagList.Tags[targets]):

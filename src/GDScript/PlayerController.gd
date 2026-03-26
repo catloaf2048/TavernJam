@@ -43,7 +43,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
 	
-	if Input.is_action_just_pressed('atk'):
+	if Input.is_action_just_pressed('atk') and canAtk:
 		add_child(attack);
 		atkCD.start();
+		canAtk=false;
 		pass;
+	pass;
+	
+func Damage(): 
+	
+	pass;

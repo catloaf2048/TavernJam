@@ -34,7 +34,7 @@ size = Vector2(10, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obiw4"]
 size = Vector2(40, 10)
 
-[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck", "attack", "atkCD")]
+[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck", "attack", "atkCD") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_otfaf")
 lock_rotation = true
 script = ExtResource("1_otfaf")
@@ -70,11 +70,9 @@ shape = SubResource("RectangleShape2D_obiw4")
 [node name="atktimer" type="Timer" parent="Attack" unique_id=1664131187]
 process_callback = 0
 wait_time = 0.091
-one_shot = true
 autostart = true
 
 [node name="atkCD" type="Timer" parent="." unique_id=53206820]
 process_callback = 0
 wait_time = 0.265
-one_shot = true
 autostart = true

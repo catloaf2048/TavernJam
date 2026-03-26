@@ -5,6 +5,7 @@ extends RigidBody2D;
 @export var hitbox:Attack;
 @export var cooldown:Timer;
 @export var speed:float = 150;
+@export var hp:int = 3;
 
 var direction:float;
 
@@ -33,4 +34,8 @@ func hitboxHit(thing:Node2D) -> void:
 	if(thing.is_in_group('Player')):
 		# nice thing about python like languages, i can just call random bunk and it wont yell at me.
 		thing.Damage();
+	pass;
+
+func Damage(): 
+	
 	pass;
