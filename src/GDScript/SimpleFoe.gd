@@ -37,5 +37,6 @@ func hitboxHit(thing:Node2D) -> void:
 	pass;
 
 func Damage(): 
-	
+	hp -=1;
+	if hp<=0: queue_free();
 	pass;
