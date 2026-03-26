@@ -5,18 +5,18 @@ extends RigidBody2D
 @export var JUMP_VELOCITY: float = -400.0
 
 @export var groundCheck:Area2D;
-@export var attackHitbox:Node2D;
-@export var atkTimer:Timer;
+@export var attack:Attack;
+@export var atkCD:Timer;
 
 var canAtk:bool;
 
 func _ready() -> void:
 	var bla:Callable = func ():
 		canAtk=true;
-		atkTimer.stop();
+		atkCD.stop();
 		pass;
 	
-	atkTimer.timeout.connect(bla);
+	atkCD.timeout.connect(bla);
 	pass;
 
 func _physics_process(delta: float) -> void:
@@ -44,6 +44,6 @@ func _physics_process(delta: float) -> void:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
 	
 	if Input.is_action_just_pressed('atk'):
-		add_child(attackHitbox);
-		atkTimer.start();
+		add_child(attack);
+		atkCD.start();
 		pass;

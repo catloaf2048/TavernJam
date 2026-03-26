@@ -2,15 +2,19 @@ class_name SimpleFoe;
 extends RigidBody2D;
 
 @export var wallCheck:Area2D;
-@export var hitbox:Area2D;
+@export var hitbox:Attack;
+@export var cooldown:Timer;
 @export var speed:float = 150;
 
 var direction:float;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var atk:Callable = func (): add_child(hitbox);
+	
 	wallCheck.area_entered.connect(wallHit);
 	hitbox.area_entered.connect(hitboxHit);
+	cooldown.timeout.connect(atk);	
 	pass # Replace with function body.
 
 

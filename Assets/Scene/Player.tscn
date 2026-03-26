@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcdn0bl2u0o6m"]
 
 [ext_resource type="Script" uid="uid://decrtfnrxnm81" path="res://src/GDScript/PlayerController.gd" id="1_otfaf"]
+[ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_edcop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otfaf"]
 friction = 0.2
@@ -30,11 +31,16 @@ fill_from = Vector2(0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otfaf"]
 size = Vector2(10, 5)
 
-[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obiw4"]
+size = Vector2(40, 10)
+
+[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck", "attack", "atkCD")]
 physics_material_override = SubResource("PhysicsMaterial_otfaf")
 lock_rotation = true
 script = ExtResource("1_otfaf")
 groundCheck = NodePath("GroundCheck")
+attack = NodePath("Attack")
+atkCD = NodePath("atkCD")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094130291]
 shape = SubResource("CapsuleShape2D_6aqw4")
@@ -52,3 +58,23 @@ position = Vector2(0, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck" unique_id=2101167627]
 shape = SubResource("RectangleShape2D_otfaf")
+
+[node name="Attack" type="Area2D" parent="." unique_id=1290807243 node_paths=PackedStringArray("hitbox", "timer")]
+script = ExtResource("2_edcop")
+hitbox = NodePath(".")
+timer = NodePath("atktimer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1814832127]
+shape = SubResource("RectangleShape2D_obiw4")
+
+[node name="atktimer" type="Timer" parent="Attack" unique_id=1664131187]
+process_callback = 0
+wait_time = 0.091
+one_shot = true
+autostart = true
+
+[node name="atkCD" type="Timer" parent="." unique_id=53206820]
+process_callback = 0
+wait_time = 0.265
+one_shot = true
+autostart = true
