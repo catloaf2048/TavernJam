@@ -7,7 +7,7 @@ extends RigidBody2D;
 @export var speed:float = 150;
 @export var hp:int = 3;
 
-var direction:float;
+var direction:float=-1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

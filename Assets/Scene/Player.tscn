@@ -12,11 +12,11 @@ friction = 0.2
 radius = 8.0
 height = 32.0
 
-[sub_resource type="Gradient" id="Gradient_otfaf"]
+[sub_resource type="Gradient" id="Gradient_edcop"]
 colors = PackedColorArray(0, 0.2913335, 0.92, 1, 0, 0.2901961, 0.92156863, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_edcop"]
-gradient = SubResource("Gradient_otfaf")
+gradient = SubResource("Gradient_edcop")
 width = 1
 
 [sub_resource type="Gradient" id="Gradient_6aqw4"]
@@ -63,6 +63,7 @@ shape = SubResource("RectangleShape2D_otfaf")
 script = ExtResource("2_edcop")
 hitbox = NodePath(".")
 timer = NodePath("atktimer")
+targets = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1814832127]
 shape = SubResource("RectangleShape2D_obiw4")

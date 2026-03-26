@@ -26,4 +26,8 @@ func TriggerEntered(node:Node2D):
 		pass;
 	pass;
 	
-func bla(): get_parent().remove_child(self);
+func bla():
+	call_deferred('Deferable');	
+	pass;
+
+func Deferable(): get_parent().remove_child(self);

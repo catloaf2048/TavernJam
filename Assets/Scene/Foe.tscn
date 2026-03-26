@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d3w3cpgkjav2m"]
+
+[ext_resource type="Script" uid="uid://bg7xnq7hawmkm" path="res://src/GDScript/SimpleFoe.gd" id="1_kq0i4"]
+[ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_htcku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0i4"]
+size = Vector2(40, 10)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kq0i4"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_htcku"]
+colors = PackedColorArray(0.92, 0, 0, 1, 0.92, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fogxd"]
+gradient = SubResource("Gradient_htcku")
+width = 1
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1111096365 node_paths=PackedStringArray("wallCheck", "hitbox", "cooldown") groups=["Foe"]]
+script = ExtResource("1_kq0i4")
+wallCheck = NodePath("Attack")
+hitbox = NodePath("Attack")
+cooldown = NodePath("atkCD")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786067587]
+shape = SubResource("RectangleShape2D_kq0i4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=793637448]
+mesh = SubResource("SphereMesh_kq0i4")
+texture = SubResource("GradientTexture1D_fogxd")
+
+[node name="Attack" type="Area2D" parent="." unique_id=2120066347 node_paths=PackedStringArray("hitbox", "timer")]
+script = ExtResource("2_htcku")
+hitbox = NodePath(".")
+timer = NodePath("atktimer")
+targets = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=887276156]
+shape = SubResource("RectangleShape2D_kq0i4")
+
+[node name="atktimer" type="Timer" parent="Attack" unique_id=830693418]
+process_callback = 0
+wait_time = 0.091
+autostart = true
+
+[node name="atkCD" type="Timer" parent="." unique_id=1806007724]
+process_callback = 0
+wait_time = 1.152
+autostart = true

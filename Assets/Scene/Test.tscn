@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
 
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
+[ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="2_jiiil"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
 a = Vector2(-128, 0)
@@ -28,3 +29,6 @@ shape = SubResource("SegmentShape2D_jiiil")
 position = Vector2(0, 8.75)
 scale = Vector2(1, 18.5)
 texture = SubResource("GradientTexture1D_jiiil")
+
+[node name="RigidBody2D" parent="." unique_id=1111096365 instance=ExtResource("2_jiiil")]
+position = Vector2(149, 0)
