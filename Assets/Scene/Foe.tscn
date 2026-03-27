@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bg7xnq7hawmkm" path="res://src/GDScript/SimpleFoe.gd" id="1_kq0i4"]
 [ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_htcku"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kq0i4"]
+friction = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kq0i4"]
 radius = 8.0
 
@@ -20,9 +23,11 @@ width = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0i4"]
 size = Vector2(40, 10)
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1111096365 node_paths=PackedStringArray("wallCheck", "hitbox", "cooldown") groups=["Foe"]]
+[node name="Foe" type="RigidBody2D" unique_id=1111096365 node_paths=PackedStringArray("wallCheck", "hitbox", "cooldown") groups=["Foe"]]
+physics_material_override = SubResource("PhysicsMaterial_kq0i4")
+lock_rotation = true
 script = ExtResource("1_kq0i4")
-wallCheck = NodePath("Attack")
+wallCheck = NodePath("WallCheck")
 hitbox = NodePath("Attack")
 cooldown = NodePath("atkCD")
 
@@ -51,3 +56,8 @@ autostart = true
 process_callback = 0
 wait_time = 1.152
 autostart = true
+
+[node name="WallCheck" type="Area2D" parent="." unique_id=1712745989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCheck" unique_id=932176584]
+shape = SubResource("RectangleShape2D_kq0i4")

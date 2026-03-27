@@ -14,6 +14,7 @@ func _ready() -> void:
 	var atk:Callable = func (): add_child(hitbox);
 	
 	wallCheck.area_entered.connect(wallHit);
+	wallCheck.body_entered.connect(wallHit);
 	hitbox.area_entered.connect(hitboxHit);
 	cooldown.timeout.connect(atk);	
 	pass # Replace with function body.
@@ -26,12 +27,12 @@ func _process(delta: float) -> void:
 	linear_velocity.y += get_gravity().y*delta;
 	pass;
 
-func wallHit(thing:Node2D) -> void:
-	direction *= -1;
+func wallHit(thing:Node2D) -> void:	
+	if(thing.is_in_group(TagList.Tags[TagList.ColliderTag.Ground])): direction *= -1;
 	pass;
 
 func hitboxHit(thing:Node2D) -> void:
-	if(thing.is_in_group('Player')):
+	if(thing.is_in_group(TagList.Tags[TagList.ColliderTag.Player])):
 		# nice thing about python like languages, i can just call random bunk and it wont yell at me.
 		thing.Damage();
 	pass;
