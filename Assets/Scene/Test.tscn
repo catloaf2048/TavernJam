@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
 
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
+[ext_resource type="Script" uid="uid://ohs8is537lt0" path="res://src/GDScript/GameManager.gd" id="1_ta6dp"]
+[ext_resource type="PackedScene" uid="uid://ndxqwg7imp40" path="res://Assets/Scene/Cutscene/DeathCutscene.tscn" id="2_cjjan"]
 [ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="2_jiiil"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
@@ -13,7 +15,12 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jiiil"]
 gradient = SubResource("Gradient_4peif")
 
-[node name="Node2D" type="Node2D" unique_id=2143129917]
+[node name="GameManager" type="Node" unique_id=292124961 node_paths=PackedStringArray("player", "deathCutscene")]
+script = ExtResource("1_ta6dp")
+player = NodePath("Player")
+deathCutscene = NodePath("DeathCutscene")
+
+[node name="DeathCutscene" parent="." unique_id=1339516340 instance=ExtResource("2_cjjan")]
 
 [node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
 
