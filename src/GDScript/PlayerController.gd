@@ -1,16 +1,24 @@
+class_name PlayerController
 extends RigidBody2D
 
+signal playerDied;
 
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -400.0
+@export var maxHp:int = 3;
 
 @export var groundCheck:Area2D;
 @export var attack:Attack;
 @export var atkCD:Timer;
 
+var startPos:Vector2;
+
+var hp:int = maxHp;
 var canAtk:bool;
 
 func _ready() -> void:
+	startPos=position;
+	
 	var bla:Callable = func ():
 		canAtk=true;
 		atkCD.stop();
@@ -51,5 +59,12 @@ func _physics_process(delta: float) -> void:
 	pass;
 	
 func Damage(): 
-	
+	hp-=1;
+	if hp < maxHp: OnDeath();
+	pass;
+
+func OnDeath():
+	hp = maxHp;
+	playerDied.emit();
+	position=startPos;
 	pass;
