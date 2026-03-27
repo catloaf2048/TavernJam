@@ -23,7 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# this will be weird, and will not be deterministic but is jam. i care not.
 	linear_velocity.x = lerp(linear_velocity.x, direction*speed, delta);
-	linear_velocity.y += 10*delta;
+	linear_velocity.y += get_gravity().y*delta;
 	pass;
 
 func wallHit(thing:Node2D) -> void:
