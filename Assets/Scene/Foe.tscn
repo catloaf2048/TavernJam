@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bg7xnq7hawmkm" path="res://src/GDScript/SimpleFoe.gd" id="1_kq0i4"]
 [ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_htcku"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0i4"]
-size = Vector2(40, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq0i4"]
+radius = 8.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_kq0i4"]
 radius = 8.0
@@ -17,6 +17,9 @@ colors = PackedColorArray(0.92, 0, 0, 1, 0.92, 0, 0, 1)
 gradient = SubResource("Gradient_htcku")
 width = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0i4"]
+size = Vector2(40, 10)
+
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1111096365 node_paths=PackedStringArray("wallCheck", "hitbox", "cooldown") groups=["Foe"]]
 script = ExtResource("1_kq0i4")
 wallCheck = NodePath("Attack")
@@ -24,7 +27,7 @@ hitbox = NodePath("Attack")
 cooldown = NodePath("atkCD")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786067587]
-shape = SubResource("RectangleShape2D_kq0i4")
+shape = SubResource("CircleShape2D_kq0i4")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=793637448]
 mesh = SubResource("SphereMesh_kq0i4")
