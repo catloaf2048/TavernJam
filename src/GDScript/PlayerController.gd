@@ -13,11 +13,13 @@ signal playerDied;
 
 var startPos:Vector2;
 
-var hp:int = maxHp;
+var hp:int;
 var canAtk:bool;
+var respawnQueued:bool = true;
 
 func _ready() -> void:
 	startPos=position;
+	hp=maxHp;
 	
 	var bla:Callable = func ():
 		canAtk=true;
@@ -28,6 +30,12 @@ func _ready() -> void:
 	pass;
 
 func _physics_process(delta: float) -> void:
+	if respawnQueued: 
+		position=startPos;
+		linear_velocity=Vector2.ZERO;
+		respawnQueued=false;
+		return;
+	
 	# Add the gravity.
 	var ground:bool = false;
 	for x in groundCheck.get_overlapping_bodies():
@@ -60,11 +68,11 @@ func _physics_process(delta: float) -> void:
 	
 func Damage(): 
 	hp-=1;
-	if hp < maxHp: OnDeath();
+	if hp < 0: OnDeath();
 	pass;
 
 func OnDeath():
 	hp = maxHp;
+	respawnQueued=true;
 	playerDied.emit();
-	position=startPos;
 	pass;

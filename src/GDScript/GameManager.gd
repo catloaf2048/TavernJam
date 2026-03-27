@@ -2,15 +2,14 @@ class_name GameManager
 extends Node 
 
 @export var player:PlayerController;
-@export var deathCutscene:Control;
+@export var deathCutscene:PackedScene;
+@export var uiMan:CanvasLayer
+
+var deathCutsceneNode:Node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.playerDied.connect(playerDied);
-	
-	var anim = deathCutscene.get_child(0) as AnimationPlayer;
-	var animDone = func(): remove_child(deathCutscene);
-	anim.animation_finished.connect(animDone);
 	pass; # Replace with function body.
 
 
@@ -19,5 +18,10 @@ func _process(delta: float) -> void:
 	pass;
 
 func playerDied():
-	add_child(deathCutscene);
+	deathCutsceneNode = deathCutscene.instantiate();
+	
+	var anim = deathCutsceneNode.get_child(0) as AnimationPlayer;
+	var animDone = func(unused): deathCutsceneNode.queue_free();
+	anim.animation_finished.connect(animDone);
+	uiMan.add_child(deathCutsceneNode);
 	pass;

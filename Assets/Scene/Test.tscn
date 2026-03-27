@@ -15,12 +15,13 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jiiil"]
 gradient = SubResource("Gradient_4peif")
 
-[node name="GameManager" type="Node" unique_id=292124961 node_paths=PackedStringArray("player", "deathCutscene")]
+[node name="GameManager" type="Node" unique_id=292124961 node_paths=PackedStringArray("player", "uiMan")]
 script = ExtResource("1_ta6dp")
 player = NodePath("Player")
-deathCutscene = NodePath("DeathCutscene")
+deathCutscene = ExtResource("2_cjjan")
+uiMan = NodePath("CanvasLayer")
 
-[node name="DeathCutscene" parent="." unique_id=1339516340 instance=ExtResource("2_cjjan")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=550320231]
 
 [node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
 
@@ -37,5 +38,19 @@ position = Vector2(0, 8.75)
 scale = Vector2(1, 18.5)
 texture = SubResource("GradientTexture1D_jiiil")
 
-[node name="RigidBody2D" parent="." unique_id=1111096365 instance=ExtResource("2_jiiil")]
-position = Vector2(149, 0)
+[node name="Foe" parent="." unique_id=1111096365 instance=ExtResource("2_jiiil")]
+position = Vector2(-80, -21)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1967671540 groups=["Ground"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=569060006]
+position = Vector2(-137.2, -91.2)
+rotation = 1.5707964
+scale = Vector2(1, 18.5)
+texture = SubResource("GradientTexture1D_jiiil")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=480001945]
+position = Vector2(-137.2, -91.2)
+rotation = 1.5707964
+scale = Vector2(1, 18.5)
+polygon = PackedVector2Array(-128, -0.5, -128, 0.5, 128, 0.5, 128, -0.5)
