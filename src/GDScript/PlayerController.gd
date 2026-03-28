@@ -1,6 +1,7 @@
 class_name PlayerController
 extends RigidBody2D
 
+signal playerHurt;
 signal playerDied;
 
 @export var SPEED: float = 300.0
@@ -68,7 +69,10 @@ func _physics_process(delta: float) -> void:
 	
 func Damage(): 
 	hp-=1;
-	if hp < 0: OnDeath();
+	if hp < 0: 
+		OnDeath();
+		return;
+	playerHurt.emit(position);
 	pass;
 
 func OnDeath():
