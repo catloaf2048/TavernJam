@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
 [ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="1_g6fab"]
-[ext_resource type="Script" uid="uid://5mh6cxitp8o5" path="res://src/GDScript/GameManager.gd" id="1_ta6dp"]
+[ext_resource type="Script" uid="uid://5mh6cxitp8o5" path="res://src/GDScript/Core/GameManager.gd" id="1_ta6dp"]
 [ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="2_jiiil"]
-[ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/ParticleStuff.gd" id="2_ta6dp"]
+[ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="2_ta6dp"]
 [ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_7x8i6"]
 [ext_resource type="PackedScene" uid="uid://d1hg72grvoaqi" path="res://Assets/Scene/Particles/FoeDeadParticles.tscn" id="5_36w8r"]
 [ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="6_36w8r"]

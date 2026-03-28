@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0pbh8hp22eae"]
 
-[ext_resource type="Script" uid="uid://ohs8is537lt0" path="res://src/GDScript/UIManager.gd" id="1_ke2pn"]
+[ext_resource type="Script" uid="uid://ohs8is537lt0" path="res://src/GDScript/Core/UIManager.gd" id="1_ke2pn"]
 [ext_resource type="PackedScene" uid="uid://ndxqwg7imp40" path="res://Assets/Scene/Cutscene/DeathCutscene.tscn" id="2_o5how"]
 
 [sub_resource type="Gradient" id="Gradient_ke2pn"]
