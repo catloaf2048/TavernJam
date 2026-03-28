@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bxgb7168w01fp"]
+
+[sub_resource type="Gradient" id="Gradient_jevpx"]
+colors = PackedColorArray(0.0648, 0.36, 0.13368002, 1, 0.13362998, 0.69, 0.1242, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fd6wf"]
+gradient = SubResource("Gradient_jevpx")
+width = 4
+height = 4
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fmto2"]
+particle_flag_disable_z = true
+initial_velocity_min = -76.75
+initial_velocity_max = 76.92
+gravity = Vector3(0, 98, 0)
+
+[node name="ParticlePlaceholder" type="GPUParticles2D" unique_id=1851605546]
+emitting = false
+texture = SubResource("GradientTexture2D_fd6wf")
+one_shot = true
+explosiveness = 0.61
+process_material = SubResource("ParticleProcessMaterial_fmto2")
