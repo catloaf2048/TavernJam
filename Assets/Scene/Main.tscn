@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
 
-[ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
-[ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="1_g6fab"]
-[ext_resource type="Script" path="res://src/GDScript/Core/GameManager.gd" id="1_nrc2l"]
-[ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="2_jiiil"]
-[ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="2_ta6dp"]
-[ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_7x8i6"]
-[ext_resource type="PackedScene" uid="uid://d1hg72grvoaqi" path="res://Assets/Scene/Particles/FoeDeadParticles.tscn" id="5_36w8r"]
-[ext_resource type="PackedScene" uid="uid://bxgb7168w01fp" path="res://Assets/Scene/Particles/PlayerHurtParticles.tscn" id="5_nrc2l"]
-[ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="6_36w8r"]
+[ext_resource type="Script" path="res://src/GDScript/Core/GameManager.gd" id="1_kp30x"]
+[ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="2_hry1v"]
+[ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="3_k2ahi"]
+[ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_80yi4"]
+[ext_resource type="PackedScene" uid="uid://d1hg72grvoaqi" path="res://Assets/Scene/Particles/FoeDeadParticles.tscn" id="5_a0ynl"]
+[ext_resource type="PackedScene" uid="uid://bxgb7168w01fp" path="res://Assets/Scene/Particles/PlayerHurtParticles.tscn" id="6_u8par"]
+[ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="7_5qe47"]
+[ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="8_ggcfg"]
+[ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="9_tuamt"]
+[ext_resource type="PackedScene" uid="uid://bu2xcv3srog0u" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
 a = Vector2(-128, 0)
@@ -21,21 +22,21 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_4peif")
 
 [node name="GameManager" type="Node" unique_id=292124961]
-script = ExtResource("1_nrc2l")
+script = ExtResource("1_kp30x")
 
-[node name="UIMan" parent="." unique_id=956099145 node_paths=PackedStringArray("player") instance=ExtResource("1_g6fab")]
+[node name="UIMan" parent="." unique_id=956099145 node_paths=PackedStringArray("player") instance=ExtResource("2_hry1v")]
 player = NodePath("../Player")
 
 [node name="ParticleMan" type="Node" parent="." unique_id=225829484 node_paths=PackedStringArray("gm", "pc")]
-script = ExtResource("2_ta6dp")
+script = ExtResource("3_k2ahi")
 gm = NodePath("..")
 pc = NodePath("../Player")
-foeHurtParticles = ExtResource("4_7x8i6")
-foeDeadParticles = ExtResource("5_36w8r")
-playerHurtParticles = ExtResource("5_nrc2l")
-playerDeadParticles = ExtResource("6_36w8r")
+foeHurtParticles = ExtResource("4_80yi4")
+foeDeadParticles = ExtResource("5_a0ynl")
+playerHurtParticles = ExtResource("6_u8par")
+playerDeadParticles = ExtResource("7_5qe47")
 
-[node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
+[node name="Player" parent="." unique_id=1999478232 instance=ExtResource("8_ggcfg")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=693361285]
@@ -51,7 +52,7 @@ position = Vector2(0, 8.75)
 scale = Vector2(1, 18.5)
 texture = SubResource("GradientTexture1D_jiiil")
 
-[node name="Foe" parent="." unique_id=1111096365 instance=ExtResource("2_jiiil")]
+[node name="Foe" parent="." unique_id=1111096365 instance=ExtResource("9_tuamt")]
 position = Vector2(-80, -21)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1967671540 groups=["Ground"]]
@@ -67,3 +68,6 @@ position = Vector2(-137.2, -91.2)
 rotation = 1.5707964
 scale = Vector2(1, 18.5)
 polygon = PackedVector2Array(-128, -0.5, -128, 0.5, 128, 0.5, 128, -0.5)
+
+[node name="World" parent="." unique_id=1618281570 instance=ExtResource("10_ftb8j")]
+position = Vector2(0, 64)

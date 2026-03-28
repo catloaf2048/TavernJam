@@ -43,8 +43,8 @@ func hitboxHit(thing:Node2D) -> void:
 		thing.Damage();
 	pass;
 
-func Damage(pos:Vector2): 
-	hp -=1;
+func Damage(amt:int = 1, pos:Vector2 = Vector2.ZERO): 
+	hp -=amt;
 	if hp<=0:
 		GameManager.instance.foeDead.emit(position);
 		queue_free();

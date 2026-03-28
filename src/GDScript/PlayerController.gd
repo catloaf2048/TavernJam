@@ -67,8 +67,8 @@ func _physics_process(delta: float) -> void:
 		pass;
 	pass;
 	
-func Damage(pos:Vector2): 
-	hp-=1;
+func Damage(amt:int = 1, pos:Vector2 = Vector2.ZERO): 
+	hp-=amt;
 	playerHurt.emit(position);
 	if hp <= 0: 
 		OnDeath();
@@ -78,5 +78,5 @@ func Damage(pos:Vector2):
 func OnDeath():
 	hp = maxHp;
 	respawnQueued=true;
-	playerDied.emit();
+	playerDied.emit(position);
 	pass;

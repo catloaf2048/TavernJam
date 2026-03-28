@@ -20,7 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass;
 
-func playerDied():
+func playerDied(ignored):
 	deathCutsceneNode = deathCutscene.instantiate();
 	
 	var anim = deathCutsceneNode.get_child(0) as AnimationPlayer;
