@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
 
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="1_4peif"]
-[ext_resource type="Script" path="res://src/GDScript/UIManager.gd" id="1_ta6dp"]
-[ext_resource type="PackedScene" uid="uid://ndxqwg7imp40" path="res://Assets/Scene/Cutscene/DeathCutscene.tscn" id="2_cjjan"]
+[ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="1_g6fab"]
 [ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="2_jiiil"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
@@ -17,11 +16,8 @@ gradient = SubResource("Gradient_4peif")
 
 [node name="GameManager" type="Node" unique_id=292124961]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=550320231 node_paths=PackedStringArray("player", "uiMan")]
-script = ExtResource("1_ta6dp")
+[node name="UIMan" parent="." unique_id=956099145 node_paths=PackedStringArray("player") instance=ExtResource("1_g6fab")]
 player = NodePath("../Player")
-deathCutscene = ExtResource("2_cjjan")
-uiMan = NodePath(".")
 
 [node name="Player" parent="." unique_id=1999478232 instance=ExtResource("1_4peif")]
 

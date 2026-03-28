@@ -4,7 +4,7 @@ extends CanvasLayer
 @export var player:PlayerController;
 @export var deathCutscene:PackedScene;
 @export var uiMan:CanvasLayer
-@export var healthBar:TextureProgressBar
+@export var healthBar:ProgressBar
 
 var deathCutsceneNode:Node;
 
