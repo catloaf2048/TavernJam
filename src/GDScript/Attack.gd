@@ -19,8 +19,8 @@ func _enter_tree() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func TriggerEntered(node:Node2D):
 	if node.is_in_group(TagList.Tags[targets]):
-		if node.has_method('Damage'): node.Damage();
-		else: node.get_parent().Damage();
+		if node.has_method('Damage'): node.Damage(global_position);
+		else: node.get_parent().Damage(global_position);
 		bla();
 		pass;
 	pass;

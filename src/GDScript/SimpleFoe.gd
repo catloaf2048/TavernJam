@@ -8,6 +8,7 @@ extends RigidBody2D;
 @export var hp:int = 3;
 
 var direction:float=-1;
+var kbOrigin:Vector2;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,11 @@ func _physics_process(delta: float) -> void:
 	# this will be weird, and will not be deterministic but is jam. i care not.
 	linear_velocity.x = lerp(linear_velocity.x, direction*speed, delta);
 	linear_velocity.y += get_gravity().y*delta;
+	
+	if kbOrigin: 
+		apply_impulse(-kbOrigin*10, kbOrigin);
+		kbOrigin=Vector2.ZERO;
+		pass;
 	pass;
 
 func wallHit(thing:Node2D) -> void:	
@@ -37,7 +43,10 @@ func hitboxHit(thing:Node2D) -> void:
 		thing.Damage();
 	pass;
 
-func Damage(): 
+func Damage(pos:Vector2): 
 	hp -=1;
-	if hp<=0: queue_free();
+	if hp<=0: 
+		queue_free();
+		return;
+	kbOrigin = pos - position; # probably wrong but we try it
 	pass;
