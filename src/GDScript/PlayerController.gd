@@ -67,9 +67,9 @@ func _physics_process(delta: float) -> void:
 		pass;
 	pass;
 	
-func Damage(): 
+func Damage(pos:Vector2): 
 	hp-=1;
-	if hp < 0: 
+	if hp <= 0: 
 		OnDeath();
 		return;
 	playerHurt.emit(position);
