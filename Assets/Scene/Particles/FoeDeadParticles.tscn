@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d1hg72grvoaqi"]
+
+[sub_resource type="Gradient" id="Gradient_wlcno"]
+colors = PackedColorArray(0.83137256, 0, 0, 1, 0.51, 0.005099995, 0.005099995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a8b1d"]
+gradient = SubResource("Gradient_wlcno")
+width = 4
+height = 4
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rr8qp"]
+particle_flag_disable_z = true
+initial_velocity_min = -76.75
+initial_velocity_max = 76.92
+gravity = Vector3(0, 98, 0)
+
+[node name="FoeDeadParticles" type="GPUParticles2D" unique_id=1214131505]
+emitting = false
+amount = 16
+texture = SubResource("GradientTexture2D_a8b1d")
+one_shot = true
+explosiveness = 0.71
+process_material = SubResource("ParticleProcessMaterial_rr8qp")

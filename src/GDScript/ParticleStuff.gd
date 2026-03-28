@@ -18,21 +18,25 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func foeHurt(pos:Vector2):
-	var bla: GPUParticles2D = foeHurtParticles.instantiate() as GPUParticles2D;
-	bla.finished.connect(bla.queue_free);
+	spawnParticles(pos, foeHurtParticles);
 	pass;
 
 func foeDead(pos:Vector2):
-	var bla: GPUParticles2D = foeDeadParticles.instantiate() as GPUParticles2D;
-	bla.finished.connect(bla.queue_free);
+	spawnParticles(pos, foeDeadParticles);
 	pass;
 
 func playerHurt(pos:Vector2):
-	var bla: GPUParticles2D = playerHurtParticles.instantiate() as GPUParticles2D;
-	bla.finished.connect(bla.queue_free);
+	spawnParticles(pos, playerHurtParticles);
 	pass;
 
 func playerDead(pos:Vector2):
-	var bla: GPUParticles2D = playerDeadParticles.instantiate() as GPUParticles2D;
+	spawnParticles(pos, playerDeadParticles);
+	pass;
+
+func spawnParticles(pos:Vector2, particles:PackedScene):
+	var bla: GPUParticles2D = particles.instantiate() as GPUParticles2D;
+	bla.position=pos;
+	add_child(bla);
 	bla.finished.connect(bla.queue_free);
+	bla.emitting = true;
 	pass;

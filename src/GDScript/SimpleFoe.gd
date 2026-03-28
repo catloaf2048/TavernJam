@@ -45,8 +45,10 @@ func hitboxHit(thing:Node2D) -> void:
 
 func Damage(pos:Vector2): 
 	hp -=1;
-	if hp<=0: 
+	if hp<=0:
+		GameManager.instance.foeDead.emit(position);
 		queue_free();
 		return;
+	GameManager.instance.foeHurt.emit(position);
 	kbOrigin = pos - position; # probably wrong but we try it
 	pass;
