@@ -12,7 +12,7 @@ var deathCutsceneNode:Node;
 func _ready() -> void:
 	player.playerDied.connect(playerDied);
 	player.playerHurt.connect(playerHit);
-	initHpBar();
+	player.ready.connect(initHpBar);
 	pass; # Replace with function body.
 
 
