@@ -1,5 +1,5 @@
-class_name GameManager
-extends Node 
+class_name UIManager
+extends CanvasLayer 
 
 @export var player:PlayerController;
 @export var deathCutscene:PackedScene;
