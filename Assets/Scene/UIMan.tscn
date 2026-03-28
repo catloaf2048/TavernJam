@@ -22,6 +22,43 @@ gradient = SubResource("Gradient_q2t68")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7o87n"]
 texture = SubResource("GradientTexture2D_ub1oe")
 
+[sub_resource type="Animation" id="Animation_ke2pn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_o5how"]
+resource_name = "default"
+length = 0.13333668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(24, 24), Vector2(8, 8), Vector2(32, 32), Vector2(24, 24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjomi"]
+_data = {
+&"RESET": SubResource("Animation_ke2pn"),
+&"default": SubResource("Animation_o5how")
+}
+
 [node name="UIMan" type="CanvasLayer" unique_id=956099145 node_paths=PackedStringArray("uiMan", "healthBar")]
 script = ExtResource("1_ke2pn")
 deathCutscene = ExtResource("2_o5how")
@@ -36,8 +73,8 @@ anchor_right = 0.22255558
 anchor_bottom = 0.099000014
 offset_left = -0.19200134
 offset_top = 0.024000168
-offset_right = -0.3840332
-offset_bottom = -0.15200806
+offset_right = -0.38406372
+offset_bottom = -0.15201569
 theme_override_styles/background = SubResource("StyleBoxTexture_rjomi")
 theme_override_styles/fill = SubResource("StyleBoxTexture_7o87n")
 step = 1.0
@@ -45,10 +82,5 @@ value = 50.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="ref" type="ColorRect" parent="." unique_id=257632748]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.21568628)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HealthBar" unique_id=1271414620]
+libraries/ = SubResource("AnimationLibrary_rjomi")
