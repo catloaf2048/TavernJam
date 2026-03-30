@@ -57,16 +57,11 @@ shape = SubResource("RectangleShape2D_otfaf")
 [node name="Attack" type="Area2D" parent="." unique_id=1290807243 node_paths=PackedStringArray("hitbox", "timer")]
 script = ExtResource("2_edcop")
 hitbox = NodePath(".")
-timer = NodePath("atktimer")
+timer = NodePath("")
 targets = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1814832127]
 shape = SubResource("RectangleShape2D_obiw4")
-
-[node name="atktimer" type="Timer" parent="Attack" unique_id=1664131187]
-process_callback = 0
-wait_time = 0.091
-autostart = true
 
 [node name="atkCD" type="Timer" parent="." unique_id=53206820]
 process_callback = 0

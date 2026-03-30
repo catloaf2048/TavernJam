@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
-	timer.timeout.connect(bla);
+	if timer: timer.timeout.connect(bla);
 	hitbox.area_entered.connect(TriggerEntered);
 	hitbox.body_entered.connect(TriggerEntered);
 	pass # Replace with function body.
@@ -26,7 +26,7 @@ func TriggerEntered(node:Node2D):
 	pass;
 	
 func bla():
-	call_deferred('Deferable');	
+	if timer: call_deferred('Deferable');	
 	pass;
 
 func Deferable(): get_parent().remove_child(self);
