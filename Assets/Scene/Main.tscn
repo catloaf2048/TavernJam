@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fpxaqrhwtqe0"]
 
-[ext_resource type="Script" path="res://src/GDScript/Core/GameManager.gd" id="1_kp30x"]
-[ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="2_hry1v"]
+[ext_resource type="Script" uid="uid://5mh6cxitp8o5" path="res://src/GDScript/Core/GameManager.gd" id="1_kp30x"]
+[ext_resource type="PackedScene" path="res://Assets/Scene/UIMan.tscn" id="2_hry1v"]
 [ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="3_k2ahi"]
 [ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_80yi4"]
 [ext_resource type="PackedScene" uid="uid://d1hg72grvoaqi" path="res://Assets/Scene/Particles/FoeDeadParticles.tscn" id="5_a0ynl"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="7_5qe47"]
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Player.tscn" id="8_ggcfg"]
 [ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="9_tuamt"]
-[ext_resource type="PackedScene" uid="uid://bu2xcv3srog0u" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
+[ext_resource type="PackedScene" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
 a = Vector2(-128, 0)
