@@ -24,7 +24,7 @@ width = 1
 size = Vector2(10, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obiw4"]
-size = Vector2(40, 10)
+size = Vector2(15, 10)
 
 [node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("sprite", "groundCheck", "attack", "atkCD") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_otfaf")
@@ -59,8 +59,10 @@ script = ExtResource("2_edcop")
 hitbox = NodePath(".")
 timer = NodePath("")
 targets = 2
+damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1814832127]
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_obiw4")
 
 [node name="atkCD" type="Timer" parent="." unique_id=53206820]

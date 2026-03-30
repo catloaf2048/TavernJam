@@ -6,6 +6,8 @@ extends Node2D
 @export var timer:Timer;
 @export var targets:TagList.ColliderTag;
 
+@export var damage:int=1;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	if timer: timer.timeout.connect(bla);
@@ -19,8 +21,8 @@ func _enter_tree() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func TriggerEntered(node:Node2D):
 	if node.is_in_group(TagList.Tags[targets]):
-		if node.has_method('Damage'): node.Damage(1,global_position);
-		else: node.get_parent().Damage(1,global_position);
+		if node.has_method('Damage'): node.Damage(damage,global_position);
+		else: node.get_parent().Damage(damage,global_position);
 		bla();
 		pass;
 	pass;
