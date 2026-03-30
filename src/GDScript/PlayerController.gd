@@ -8,17 +8,20 @@ signal playerDied;
 @export var JUMP_VELOCITY: float = -400.0
 @export var maxHp:int = 3;
 
+@export var sprite:AnimatedSprite2D;
 @export var groundCheck:Area2D;
 @export var attack:Attack;
 @export var atkCD:Timer;
 
 var startPos:Vector2;
+var spriteStartScale:Vector2;
 
 var hp:int;
 var canAtk:bool;
 var respawnQueued:bool = true;
 
 func _ready() -> void:
+	spriteStartScale = sprite.scale;
 	startPos=position;
 	hp=maxHp;
 	
@@ -65,6 +68,8 @@ func _physics_process(delta: float) -> void:
 		atkCD.start();
 		canAtk=false;
 		pass;
+	
+	HandleAnimation(direction, ground);
 	pass;
 	
 func Damage(amt:int = 1, pos:Vector2 = Vector2.ZERO): 
@@ -78,5 +83,24 @@ func Damage(amt:int = 1, pos:Vector2 = Vector2.ZERO):
 func OnDeath():
 	hp = maxHp;
 	respawnQueued=true;
+	sprite.play('Death');
 	playerDied.emit(position);
+	pass;
+
+func HandleAnimation(direction:float, ground:bool) -> void:
+	if not ground:
+		
+		sprite.play('Jump');
+		return;
+	if direction == 0:
+		sprite.play('Idle');
+		return;
+	
+	sprite.play('Run');
+	if direction > 0:
+		sprite.scale.x = spriteStartScale.x * 1;
+		pass;
+	else:
+		sprite.scale.x = spriteStartScale.x * -1;
+		pass;
 	pass;

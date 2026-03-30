@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://decrtfnrxnm81" path="res://src/GDScript/PlayerController.gd" id="1_otfaf"]
 [ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_edcop"]
+[ext_resource type="SpriteFrames" uid="uid://dhyj2axmheqp0" path="res://Assets/Sprite/Player/PlayerSpriteFrames.tres" id="2_obiw4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otfaf"]
 friction = 0.2
@@ -19,25 +20,17 @@ colors = PackedColorArray(0, 0.2913335, 0.92, 1, 0, 0.2901961, 0.92156863, 1)
 gradient = SubResource("Gradient_edcop")
 width = 1
 
-[sub_resource type="Gradient" id="Gradient_6aqw4"]
-colors = PackedColorArray(0, 0, 0, 0.5176471, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_otfaf"]
-gradient = SubResource("Gradient_6aqw4")
-width = 20
-height = 30
-fill_from = Vector2(0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otfaf"]
 size = Vector2(10, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obiw4"]
 size = Vector2(40, 10)
 
-[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("groundCheck", "attack", "atkCD") groups=["Player"]]
+[node name="Player" type="RigidBody2D" unique_id=17811856 node_paths=PackedStringArray("sprite", "groundCheck", "attack", "atkCD") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_otfaf")
 lock_rotation = true
 script = ExtResource("1_otfaf")
+sprite = NodePath("Sprite2D")
 groundCheck = NodePath("GroundCheck")
 attack = NodePath("Attack")
 atkCD = NodePath("atkCD")
@@ -49,9 +42,11 @@ shape = SubResource("CapsuleShape2D_6aqw4")
 mesh = SubResource("CapsuleMesh_otfaf")
 texture = SubResource("GradientTexture1D_edcop")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1949950256]
-visible = false
-texture = SubResource("GradientTexture2D_otfaf")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2092267502]
+scale = Vector2(0.05, 0.05)
+sprite_frames = ExtResource("2_obiw4")
+animation = &"Run"
+autoplay = "Idle"
 
 [node name="GroundCheck" type="Area2D" parent="." unique_id=470305319]
 position = Vector2(0, 15)
