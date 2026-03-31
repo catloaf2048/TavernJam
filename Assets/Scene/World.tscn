@@ -5,6 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://dbibmoeh6secv" path="res://Assets/Sprite/Background/BG_FOREGROUND.PNG" id="3_688b1"]
 [ext_resource type="Texture2D" uid="uid://caws677ab6gk6" path="res://Assets/Sprite/Background/SkyTexture.tres" id="3_ntegu"]
 
+[sub_resource type="Gradient" id="Gradient_688b1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.70980394, 0.5764706, 0.14901961, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_clwv2"]
+gradient = SubResource("Gradient_688b1")
+width = 8192
+
 [sub_resource type="Gradient" id="Gradient_klbmg"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ntegu"]
@@ -14,33 +22,7 @@ height = 4
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_688b1"]
 
-[sub_resource type="Gradient" id="Gradient_688b1"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.70980394, 0.5764706, 0.14901961, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_clwv2"]
-gradient = SubResource("Gradient_688b1")
-width = 8192
-
 [node name="World" type="Node2D" unique_id=1618281570]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1569473119 groups=["Ground"]]
-position = Vector2(0, -25)
-scale = Vector2(50, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1098976447]
-position = Vector2(0, 2)
-texture = SubResource("GradientTexture2D_ntegu")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=625156960]
-position = Vector2(0, 2)
-polygon = PackedVector2Array(-64, -2, -64, 2, 64, 2, 64, -2)
-
-[node name="KillTrigger" type="Area2D" parent="." unique_id=970660808]
-script = ExtResource("1_sh7mi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillTrigger" unique_id=76374168]
-shape = SubResource("WorldBoundaryShape2D_688b1")
 
 [node name="ParallaxParent" type="Node2D" parent="." unique_id=1685248988]
 z_index = -1
@@ -77,10 +59,32 @@ position = Vector2(1500, -200)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_688b1")
 
-[node name="WorldBorder" type="StaticBody2D" parent="." unique_id=1046910115 groups=["Ground"]]
+[node name="Borders" type="Node2D" parent="." unique_id=503027975]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBorder" unique_id=1798478787]
+[node name="BottomWorldBorder" type="StaticBody2D" parent="Borders" unique_id=1569473119 groups=["Ground"]]
+position = Vector2(0, -25)
+scale = Vector2(50, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Borders/BottomWorldBorder" unique_id=1098976447]
+position = Vector2(0, 2)
+texture = SubResource("GradientTexture2D_ntegu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders/BottomWorldBorder" unique_id=625156960]
+position = Vector2(0, 2)
+polygon = PackedVector2Array(-64, -2, -64, 2, 64, 2, 64, -2)
+
+[node name="LeftWorldBorder" type="StaticBody2D" parent="Borders" unique_id=1046910115 groups=["Ground"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders/LeftWorldBorder" unique_id=1798478787]
 position = Vector2(-25, -91.2)
 rotation = 1.5707964
 scale = Vector2(1, 18.5)
 polygon = PackedVector2Array(-128, -0.5, -128, 0.5, 128, 0.5, 128, -0.5)
+
+[node name="KillTrigger" type="Area2D" parent="Borders" unique_id=970660808]
+script = ExtResource("1_sh7mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/KillTrigger" unique_id=76374168]
+shape = SubResource("WorldBoundaryShape2D_688b1")
+
+[node name="WorldObjects" type="Node2D" parent="." unique_id=344464918]
