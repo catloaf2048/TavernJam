@@ -109,6 +109,9 @@ shape = SubResource("WorldBoundaryShape2D_688b1")
 [node name="Platform" parent="WorldObjects" unique_id=1087401016 instance=ExtResource("6_sv1w6")]
 position = Vector2(401, -147)
 
+[node name="Platform7" parent="WorldObjects" unique_id=1460642719 instance=ExtResource("6_sv1w6")]
+position = Vector2(302, -91)
+
 [node name="Platform2" parent="WorldObjects" unique_id=1661747852 instance=ExtResource("6_sv1w6")]
 position = Vector2(310, -220)
 
@@ -323,6 +326,15 @@ position = Vector2(1982, -138)
 [node name="CollisionShape2D" parent="WorldObjects/WallCheckTrigger13" index="0" unique_id=865216267]
 position = Vector2(778, 6)
 shape = SubResource("RectangleShape2D_nu15w")
+
+[node name="Platform8" parent="WorldObjects" unique_id=397595274 instance=ExtResource("6_sv1w6")]
+position = Vector2(1594, -165)
+
+[node name="Platform9" parent="WorldObjects" unique_id=5157265 instance=ExtResource("6_sv1w6")]
+position = Vector2(2222, -101)
+
+[node name="Platform10" parent="WorldObjects" unique_id=651265884 instance=ExtResource("6_sv1w6")]
+position = Vector2(2421, -165)
 
 [editable path="WorldObjects/Wall"]
 [editable path="WorldObjects/Wall2"]
