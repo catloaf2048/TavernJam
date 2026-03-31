@@ -11,7 +11,8 @@ var deathCutsceneNode:Node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.instance.playerWon.connect(playerWon);
+	var gmReady = func(): GameManager.instance.playerWon.connect(playerWon);
+	get_parent().ready.connect(gmReady);
 	player.playerDied.connect(playerDied);
 	player.playerHurt.connect(playerHit);
 	player.ready.connect(initHpBar);

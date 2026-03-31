@@ -9,13 +9,17 @@ signal playerWon;
 @export var victoryScene:PackedScene;
 @export var player:PlayerController;
 
-var level:Node;
+@onready var level:Node = $World;
 
 static var instance:GameManager;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	instance = self;
+	playerWon.connect(PlayerWon);
+#	level = levelScene.instantiate();
+#	level.ready.connect(player.playerDied.emit)
+#	add_child(level);
 	pass # Replace with function body.
 
 

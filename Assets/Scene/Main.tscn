@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5mh6cxitp8o5" path="res://src/GDScript/Core/GameManager.gd" id="1_kp30x"]
 [ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="2_hry1v"]
+[ext_resource type="PackedScene" uid="uid://bbctgfv7k8sn1" path="res://Assets/Scene/VictoryScene.tscn" id="2_k2ahi"]
 [ext_resource type="PackedScene" uid="uid://ndxqwg7imp40" path="res://Assets/Scene/Cutscene/DeathCutscene.tscn" id="3_hry1v"]
 [ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="3_k2ahi"]
 [ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_80yi4"]
@@ -12,8 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bu2xcv3srog0u" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
 [ext_resource type="AudioStream" uid="uid://b147y6uy7emhq" path="res://Assets/Audio/Music/Arcady_BG_OST_Susa.mp3" id="10_kp30x"]
 
-[node name="GameManager" type="Node" unique_id=292124961]
+[node name="GameManager" type="Node" unique_id=292124961 node_paths=PackedStringArray("player")]
 script = ExtResource("1_kp30x")
+levelScene = ExtResource("10_ftb8j")
+victoryScene = ExtResource("2_k2ahi")
+player = NodePath("Player")
 
 [node name="UIMan" parent="." unique_id=956099145 node_paths=PackedStringArray("player") instance=ExtResource("2_hry1v")]
 player = NodePath("../Player")

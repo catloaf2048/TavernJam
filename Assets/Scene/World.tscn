@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b56wil8uffwqo" path="res://Assets/Scene/World/Platform.tscn" id="6_sv1w6"]
 [ext_resource type="PackedScene" uid="uid://ccnniksyx7sxi" path="res://Assets/Scene/World/Wall.tscn" id="7_d0m6r"]
 [ext_resource type="PackedScene" uid="uid://dbnl70ig72pwn" path="res://Assets/Scene/World/WallCheckTrigger.tscn" id="9_aed03"]
+[ext_resource type="PackedScene" uid="uid://cbeypvfbd8iye" path="res://Assets/Scene/World/EndLevelTrigger.tscn" id="10_d0m6r"]
 
 [sub_resource type="Gradient" id="Gradient_688b1"]
 offsets = PackedFloat32Array(0)
@@ -341,6 +342,9 @@ position = Vector2(2540, -91)
 
 [node name="Platform12" parent="WorldObjects" unique_id=1495400394 instance=ExtResource("6_sv1w6")]
 position = Vector2(2541, -164)
+
+[node name="EndLevelTrigger" parent="WorldObjects" unique_id=1580052214 instance=ExtResource("10_d0m6r")]
+position = Vector2(2826, -182)
 
 [editable path="WorldObjects/Wall"]
 [editable path="WorldObjects/Wall2"]
