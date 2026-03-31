@@ -12,16 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cplecxkf0sc2g" path="res://Assets/Scene/Entity/Foe/FlyingFoe.tscn" id="11_k2ahi"]
 [ext_resource type="PackedScene" uid="uid://dbnl70ig72pwn" path="res://Assets/Scene/World/WallCheckTrigger.tscn" id="12_80yi4"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_jiiil"]
-a = Vector2(-128, 0)
-b = Vector2(128, 0)
-
-[sub_resource type="Gradient" id="Gradient_4peif"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jiiil"]
-gradient = SubResource("Gradient_4peif")
-
 [node name="GameManager" type="Node" unique_id=292124961]
 script = ExtResource("1_kp30x")
 
@@ -41,31 +31,6 @@ playerDeadParticles = ExtResource("7_5qe47")
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=693361285]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1944801384 groups=["Ground"]]
-position = Vector2(0, 20)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1878543670]
-shape = SubResource("SegmentShape2D_jiiil")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1725641389]
-position = Vector2(0, 8.75)
-scale = Vector2(1, 18.5)
-texture = SubResource("GradientTexture1D_jiiil")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1967671540 groups=["Ground"]]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=569060006]
-position = Vector2(-137.2, -91.2)
-rotation = 1.5707964
-scale = Vector2(1, 18.5)
-texture = SubResource("GradientTexture1D_jiiil")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=480001945]
-position = Vector2(-137.2, -91.2)
-rotation = 1.5707964
-scale = Vector2(1, 18.5)
-polygon = PackedVector2Array(-128, -0.5, -128, 0.5, 128, 0.5, 128, -0.5)
 
 [node name="World" parent="." unique_id=1618281570 instance=ExtResource("10_ftb8j")]
 position = Vector2(0, 64)
