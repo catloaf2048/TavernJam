@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cplecxkf0sc2g"]
 
-[ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Foe.tscn" id="1_kwaue"]
+[ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Entity/Foe/Foe.tscn" id="1_kwaue"]
 [ext_resource type="Script" uid="uid://d12kbk0pqx5rt" path="res://src/GDScript/Foes/FlyingFoe.gd" id="2_0wheh"]
 [ext_resource type="SpriteFrames" uid="uid://dkscexjhhb03r" path="res://Assets/Sprite/Foes/Cloudette/FlyingFoeSpriteFrames.tres" id="3_f0ffk"]
 
@@ -11,6 +11,7 @@ radius = 12.0
 size = Vector2(40, 20)
 
 [node name="FlyingFoe" unique_id=1111096365 node_paths=PackedStringArray("sprite") instance=ExtResource("1_kwaue")]
+gravity_scale = 0.0
 script = ExtResource("2_0wheh")
 sprite = NodePath("AnimParent/AnimatedSprite2D")
 
@@ -32,3 +33,12 @@ visible = false
 
 [node name="CollisionShape2D" parent="Attack" parent_id_path=PackedInt32Array(2120066347) index="0" unique_id=887276156]
 shape = SubResource("RectangleShape2D_0wheh")
+
+[node name="atktimer" parent="Attack" parent_id_path=PackedInt32Array(2120066347) index="1" unique_id=830693418]
+wait_time = 4096.0
+one_shot = true
+autostart = false
+
+[node name="atkCD" parent="." index="4" unique_id=1806007724]
+wait_time = 4096.0
+autostart = false

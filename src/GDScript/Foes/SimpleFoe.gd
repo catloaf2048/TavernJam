@@ -42,7 +42,7 @@ func HandleKnockback(delta:float):
 		pass;
 	pass;
 
-func wallHit(thing:Node2D) -> void:	
+func wallHit(thing:Node2D) -> void:
 	if(thing.is_in_group(TagList.Tags[TagList.ColliderTag.Ground])): direction *= -1;
 	pass;
 

@@ -1,10 +1,4 @@
 extends SimpleFoe
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-
-	pass;
 	
 func HandleMovement(delta: float):
 	linear_velocity.x = lerp(linear_velocity.x, direction*speed, delta);
