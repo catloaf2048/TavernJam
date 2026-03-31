@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3w3cpgkjav2m"]
 
-[ext_resource type="Script" uid="uid://bg7xnq7hawmkm" path="res://src/GDScript/SimpleFoe.gd" id="1_kq0i4"]
+[ext_resource type="Script" uid="uid://bg7xnq7hawmkm" path="res://src/GDScript/Foes/SimpleFoe.gd" id="1_kq0i4"]
 [ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="2_htcku"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kq0i4"]

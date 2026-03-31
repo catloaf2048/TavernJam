@@ -1,8 +1,10 @@
 class_name SimpleFoe;
 extends RigidBody2D;
 
+@export var sprite:AnimatedSprite2D;
 @export var wallCheck:Area2D;
 @export var hitbox:Attack;
+
 @export var cooldown:Timer;
 @export var speed:float = 150;
 @export var hp:int = 3;
@@ -23,10 +25,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# this will be weird, and will not be deterministic but is jam. i care not.
+	HandleMovement(delta);
+	HandleKnockback(delta);
+	HandleAnimation(delta);
+	pass;
+
+func HandleMovement(delta: float):
 	linear_velocity.x = lerp(linear_velocity.x, direction*speed, delta);
 	linear_velocity.y += get_gravity().y*delta;
-	
+	pass;
+
+func HandleKnockback(delta:float):
 	if kbOrigin: 
 		apply_impulse(-kbOrigin*10, kbOrigin);
 		kbOrigin=Vector2.ZERO;
@@ -51,4 +60,8 @@ func Damage(amt:int = 1, pos:Vector2 = Vector2.ZERO):
 		return;
 	GameManager.instance.foeHurt.emit(position);
 	kbOrigin = pos - position; # probably wrong but we try it
+	pass;
+
+func HandleAnimation(delta: float):
+	
 	pass;
