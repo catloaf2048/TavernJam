@@ -3,6 +3,13 @@ extends Node
 
 signal foeHurt;
 signal foeDead;
+signal playerWon;
+
+@export var levelScene:PackedScene;
+@export var victoryScene:PackedScene;
+@export var player:PlayerController;
+
+var level:Node;
 
 static var instance:GameManager;
 
@@ -12,6 +19,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func PlayerWon():
+	player.queue_free();
+	level.queue_free();
+	add_child(victoryScene.instantiate());
+	pass;

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cbeypvfbd8iye"]
+
+[ext_resource type="Script" uid="uid://dbuapa1vah075" path="res://src/GDScript/EndLevelTrigger.gd" id="1_vckys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tpiv"]
+size = Vector2(20, 1080)
+
+[node name="EndLevelTrigger" type="Area2D" unique_id=1580052214]
+script = ExtResource("1_vckys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1598872284]
+shape = SubResource("RectangleShape2D_6tpiv")
+debug_color = Color(0, 0.6479834, 0.2043201, 0.41960785)

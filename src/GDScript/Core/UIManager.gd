@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @export var player:PlayerController;
 @export var deathCutscene:PackedScene;
+@export var victoryCutscene:PackedScene;
 @export var uiMan:CanvasLayer
 @export var healthBar:ProgressBar
 
@@ -10,6 +11,7 @@ var deathCutsceneNode:Node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.instance.playerWon.connect(playerWon);
 	player.playerDied.connect(playerDied);
 	player.playerHurt.connect(playerHit);
 	player.ready.connect(initHpBar);
@@ -17,7 +19,12 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func playerWon() -> void:
+	var victoryCutsceneNode = victoryCutscene.instantiate();
+	var anim = victoryCutsceneNode.get_child(0) as AnimationPlayer;
+	var animDone = func(ignored): victoryCutsceneNode.queue_free();
+	anim.animation_finished.connect(animDone);
+	uiMan.add_child(victoryCutsceneNode);
 	pass;
 
 func playerDied(ignored):
