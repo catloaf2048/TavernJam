@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="7_5qe47"]
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Entity/Player.tscn" id="8_ggcfg"]
 [ext_resource type="PackedScene" uid="uid://bu2xcv3srog0u" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
+[ext_resource type="AudioStream" uid="uid://b147y6uy7emhq" path="res://Assets/Audio/Music/Arcady_BG_OST_Susa.mp3" id="10_kp30x"]
 
 [node name="GameManager" type="Node" unique_id=292124961]
 script = ExtResource("1_kp30x")
@@ -32,3 +33,7 @@ unique_name_in_owner = true
 
 [node name="World" parent="." unique_id=1618281570 instance=ExtResource("10_ftb8j")]
 position = Vector2(0, 64)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1764669171]
+stream = ExtResource("10_kp30x")
+autoplay = true
