@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dli4y4d581p7k"]
+
+[ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="1_tus4c"]
+[ext_resource type="Texture2D" uid="uid://bd1m130agcmql" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_01.png" id="2_6ly11"]
+[ext_resource type="Texture2D" uid="uid://6gg80fy3gswb" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_05.png" id="2_24gkf"]
+[ext_resource type="Texture2D" uid="uid://n6h4endesj7a" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_02.png" id="3_xo741"]
+[ext_resource type="Texture2D" uid="uid://rjq0mkckv4fh" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_03.png" id="4_qcm3q"]
+[ext_resource type="Texture2D" uid="uid://djtlw0608lm1x" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_04.png" id="5_22u3j"]
+[ext_resource type="Texture2D" uid="uid://dpeu80q6m0a2q" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_06.png" id="7_iisy8"]
+[ext_resource type="Texture2D" uid="uid://bjxno0vfr4hpd" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_07.png" id="8_ua4hs"]
+[ext_resource type="Texture2D" uid="uid://b0ce1f44e43xw" path="res://Assets/Sprite/Foes/Spikes/attack/ATTACK_Spikes_08.png" id="9_d5lup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brjga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ly11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xo741")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qcm3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_22u3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_24gkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iisy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ua4hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d5lup")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Spikes" type="Area2D" unique_id=211226691 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_tus4c")
+hitbox = NodePath(".")
+targets = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246791122]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_brjga")
+autoplay = "default"
+frame_progress = 0.8707981
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=558428076]
+scale = Vector2(0.05, 0.05)
+polygon = PackedVector2Array(86, -159.1, 86, -142.5, 55.599976, -28.399994, 26, -134.3, 26, -140.1, 15, -145.7, -2.2999878, -133, -8.299988, -133, -32.100006, -8.700012, -37.700012, -17, -54.299988, -17, -58.899994, -7.700012, -88, -120.399994, -88, -127.2, -101.70001, -131.8, -130, -94, -134.29999, -94, -154, 8, -155, 3.7999878, -155, -6.5, -184.79999, -8, -190.6, -8, -218.1, -12.299988, -248, -83.100006, -248, -94.29999, -278.1, -88, -287, -88, -291, -50, -293.4, -50, -279, 287.40002, -279, 298, 275, 300, 284.5, 300, 296.5, 281, 302.3, 281, 291, -116.3, 291, -132.6, 254.09998, -124, 246.79999, -124, 196, 27.299988, 190, 1.8999939, 190, -5.799988, 166.90002, -15, 155.5, -15, 153.90002, -12.700012, 122, -130.5, 122, -138.8)
