@@ -36,6 +36,9 @@ size = Vector2(104, 349)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_644qu"]
 size = Vector2(20, 63)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nu15w"]
+size = Vector2(20, 219)
+
 [node name="World" type="Node2D" unique_id=1618281570]
 
 [node name="ParallaxParent" type="Node2D" parent="." unique_id=1685248988]
@@ -190,9 +193,142 @@ position = Vector2(835, -438)
 [node name="FlyingFoe3" parent="WorldObjects" unique_id=2008021436 instance=ExtResource("6_nu15w")]
 position = Vector2(969, -396)
 
+[node name="Spikes7" parent="WorldObjects" unique_id=771445633 instance=ExtResource("5_7addk")]
+position = Vector2(887, -38)
+
+[node name="Spikes8" parent="WorldObjects" unique_id=468653169 instance=ExtResource("5_7addk")]
+position = Vector2(631, -38)
+
+[node name="Spikes9" parent="WorldObjects" unique_id=1161620016 instance=ExtResource("5_7addk")]
+position = Vector2(688, -39)
+
+[node name="Spikes10" parent="WorldObjects" unique_id=300743976 instance=ExtResource("5_7addk")]
+position = Vector2(1080, -37)
+
+[node name="Spikes11" parent="WorldObjects" unique_id=935286186 instance=ExtResource("5_7addk")]
+position = Vector2(1267, -39)
+
+[node name="FlyingFoe4" parent="WorldObjects" unique_id=1945051340 instance=ExtResource("6_nu15w")]
+position = Vector2(656, -84)
+
+[node name="FlyingFoe5" parent="WorldObjects" unique_id=1079249736 instance=ExtResource("6_nu15w")]
+position = Vector2(658, -147)
+
+[node name="FlyingFoe6" parent="WorldObjects" unique_id=327787755 instance=ExtResource("6_nu15w")]
+position = Vector2(887, -84)
+
+[node name="FlyingFoe7" parent="WorldObjects" unique_id=1885451297 instance=ExtResource("6_nu15w")]
+position = Vector2(889, -147)
+
+[node name="FlyingFoe8" parent="WorldObjects" unique_id=1746660214 instance=ExtResource("6_nu15w")]
+position = Vector2(1077, -76)
+
+[node name="FlyingFoe9" parent="WorldObjects" unique_id=1613981328 instance=ExtResource("6_nu15w")]
+position = Vector2(1079, -139)
+
+[node name="FlyingFoe10" parent="WorldObjects" unique_id=1601998968 instance=ExtResource("6_nu15w")]
+position = Vector2(1267, -76)
+
+[node name="FlyingFoe11" parent="WorldObjects" unique_id=719053327 instance=ExtResource("6_nu15w")]
+position = Vector2(1269, -139)
+
+[node name="FlyingFoe12" parent="WorldObjects" unique_id=1812780279 instance=ExtResource("6_nu15w")]
+position = Vector2(1518, -76)
+
+[node name="FlyingFoe13" parent="WorldObjects" unique_id=1578469424 instance=ExtResource("6_nu15w")]
+position = Vector2(1520, -139)
+
+[node name="FlyingFoe14" parent="WorldObjects" unique_id=2075486167 instance=ExtResource("6_nu15w")]
+position = Vector2(1520, -199)
+
+[node name="FlyingFoe15" parent="WorldObjects" unique_id=1801732792 instance=ExtResource("6_nu15w")]
+position = Vector2(1522, -262)
+
+[node name="WallCheckTrigger2" parent="WorldObjects" unique_id=1941717501 instance=ExtResource("9_aed03")]
+position = Vector2(1726, -262)
+
+[node name="WallCheckTrigger3" parent="WorldObjects" unique_id=1810876811 instance=ExtResource("9_aed03")]
+position = Vector2(1726, -196)
+
+[node name="WallCheckTrigger4" parent="WorldObjects" unique_id=2050619241 instance=ExtResource("9_aed03")]
+position = Vector2(1726, -134)
+
+[node name="WallCheckTrigger5" parent="WorldObjects" unique_id=787804942 instance=ExtResource("9_aed03")]
+position = Vector2(1726, -73)
+
+[node name="WallCheckTrigger6" parent="WorldObjects" unique_id=1400054587 instance=ExtResource("9_aed03")]
+position = Vector2(1465, -262)
+
+[node name="WallCheckTrigger7" parent="WorldObjects" unique_id=1541171471 instance=ExtResource("9_aed03")]
+position = Vector2(1465, -196)
+
+[node name="WallCheckTrigger8" parent="WorldObjects" unique_id=1741862870 instance=ExtResource("9_aed03")]
+position = Vector2(1465, -134)
+
+[node name="WallCheckTrigger9" parent="WorldObjects" unique_id=1691022557 instance=ExtResource("9_aed03")]
+position = Vector2(1465, -73)
+
+[node name="Spikes12" parent="WorldObjects" unique_id=714245704 instance=ExtResource("5_7addk")]
+position = Vector2(1572, -38)
+
+[node name="Spikes13" parent="WorldObjects" unique_id=645805395 instance=ExtResource("5_7addk")]
+position = Vector2(1674, -37)
+
+[node name="FlyingFoe16" parent="WorldObjects" unique_id=796908983 instance=ExtResource("6_nu15w")]
+position = Vector2(1355, -369)
+
+[node name="WallCheckTrigger10" parent="WorldObjects" unique_id=240076505 instance=ExtResource("9_aed03")]
+position = Vector2(1189, -369)
+
+[node name="WallCheckTrigger11" parent="WorldObjects" unique_id=772659318 instance=ExtResource("9_aed03")]
+position = Vector2(1465, -369)
+
+[node name="FlyingFoe17" parent="WorldObjects" unique_id=1612367704 instance=ExtResource("6_nu15w")]
+position = Vector2(2084, -91)
+
+[node name="FlyingFoe18" parent="WorldObjects" unique_id=567406575 instance=ExtResource("6_nu15w")]
+position = Vector2(2222, -203)
+
+[node name="FlyingFoe19" parent="WorldObjects" unique_id=364921718 instance=ExtResource("6_nu15w")]
+position = Vector2(2279, -76)
+
+[node name="FlyingFoe20" parent="WorldObjects" unique_id=1772043050 instance=ExtResource("6_nu15w")]
+position = Vector2(2331, -161)
+
+[node name="FlyingFoe21" parent="WorldObjects" unique_id=1832379732 instance=ExtResource("6_nu15w")]
+position = Vector2(2448, -102)
+
+[node name="FlyingFoe22" parent="WorldObjects" unique_id=1436334664 instance=ExtResource("6_nu15w")]
+position = Vector2(2549, -182)
+
+[node name="FlyingFoe23" parent="WorldObjects" unique_id=227915176 instance=ExtResource("6_nu15w")]
+position = Vector2(2163, -41)
+
+[node name="FlyingFoe24" parent="WorldObjects" unique_id=675667544 instance=ExtResource("6_nu15w")]
+position = Vector2(2540, -50)
+
+[node name="FlyingFoe25" parent="WorldObjects" unique_id=1917016638 instance=ExtResource("6_nu15w")]
+position = Vector2(2620, -116)
+
+[node name="WallCheckTrigger12" parent="WorldObjects" unique_id=372575817 instance=ExtResource("9_aed03")]
+position = Vector2(1982, -138)
+
+[node name="CollisionShape2D" parent="WorldObjects/WallCheckTrigger12" index="0" unique_id=865216267]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_nu15w")
+
+[node name="WallCheckTrigger13" parent="WorldObjects" unique_id=1498939861 instance=ExtResource("9_aed03")]
+position = Vector2(1982, -138)
+
+[node name="CollisionShape2D" parent="WorldObjects/WallCheckTrigger13" index="0" unique_id=865216267]
+position = Vector2(778, 6)
+shape = SubResource("RectangleShape2D_nu15w")
+
 [editable path="WorldObjects/Wall"]
 [editable path="WorldObjects/Wall2"]
 [editable path="WorldObjects/Wall3"]
 [editable path="WorldObjects/Wall4"]
 [editable path="WorldObjects/Wall5"]
 [editable path="WorldObjects/WallCheckTrigger"]
+[editable path="WorldObjects/WallCheckTrigger12"]
+[editable path="WorldObjects/WallCheckTrigger13"]
