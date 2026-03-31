@@ -331,10 +331,16 @@ shape = SubResource("RectangleShape2D_nu15w")
 position = Vector2(1594, -165)
 
 [node name="Platform9" parent="WorldObjects" unique_id=5157265 instance=ExtResource("6_sv1w6")]
-position = Vector2(2222, -101)
+position = Vector2(2222, -86)
 
 [node name="Platform10" parent="WorldObjects" unique_id=651265884 instance=ExtResource("6_sv1w6")]
-position = Vector2(2421, -165)
+position = Vector2(2373, -131)
+
+[node name="Platform11" parent="WorldObjects" unique_id=720121075 instance=ExtResource("6_sv1w6")]
+position = Vector2(2540, -91)
+
+[node name="Platform12" parent="WorldObjects" unique_id=1495400394 instance=ExtResource("6_sv1w6")]
+position = Vector2(2541, -164)
 
 [editable path="WorldObjects/Wall"]
 [editable path="WorldObjects/Wall2"]
