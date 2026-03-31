@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bu2xcv3srog0u"]
 
 [ext_resource type="Script" uid="uid://chdx6fnlftur5" path="res://src/GDScript/KillTrigger.gd" id="1_sh7mi"]
+[ext_resource type="Texture2D" uid="uid://dtxs37wv02lf5" path="res://Assets/Sprite/Background/BG_PARALLAX.PNG" id="2_klbmg"]
+[ext_resource type="Texture2D" uid="uid://dbibmoeh6secv" path="res://Assets/Sprite/Background/BG_FOREGROUND.PNG" id="3_688b1"]
+[ext_resource type="Texture2D" uid="uid://caws677ab6gk6" path="res://Assets/Sprite/Background/SkyTexture.tres" id="3_ntegu"]
 
 [sub_resource type="Gradient" id="Gradient_klbmg"]
 
@@ -11,9 +14,19 @@ height = 4
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_688b1"]
 
+[sub_resource type="Gradient" id="Gradient_688b1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.70980394, 0.5764706, 0.14901961, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_clwv2"]
+gradient = SubResource("Gradient_688b1")
+width = 8192
+
 [node name="World" type="Node2D" unique_id=1618281570]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1569473119]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1569473119 groups=["Ground"]]
+position = Vector2(0, -25)
+scale = Vector2(50, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1098976447]
 position = Vector2(0, 2)
@@ -28,3 +41,38 @@ script = ExtResource("1_sh7mi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillTrigger" unique_id=76374168]
 shape = SubResource("WorldBoundaryShape2D_688b1")
+
+[node name="ParallaxParent" type="Node2D" parent="." unique_id=1685248988]
+z_index = -1
+
+[node name="BG" type="Parallax2D" parent="ParallaxParent" unique_id=1017633204]
+z_index = -2
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(1000, 0)
+repeat_size = Vector2(4000, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxParent/BG" unique_id=1420392354]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_klbmg")
+
+[node name="Sky" type="Parallax2D" parent="ParallaxParent" unique_id=333264157]
+z_index = -3
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1024, 0)
+autoscroll = Vector2(-15, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxParent/Sky" unique_id=844459263]
+texture = ExtResource("3_ntegu")
+
+[node name="Ground" type="Sprite2D" parent="ParallaxParent" unique_id=576645968]
+position = Vector2(0, 175.24998)
+scale = Vector2(1, 351.49997)
+texture = SubResource("GradientTexture1D_clwv2")
+
+[node name="FG" type="Sprite2D" parent="ParallaxParent" unique_id=497449397]
+z_index = -1
+position = Vector2(1500, -200)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_688b1")
