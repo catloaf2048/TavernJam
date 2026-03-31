@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5mh6cxitp8o5" path="res://src/GDScript/Core/GameManager.gd" id="1_kp30x"]
 [ext_resource type="PackedScene" uid="uid://c0pbh8hp22eae" path="res://Assets/Scene/UIMan.tscn" id="2_hry1v"]
+[ext_resource type="PackedScene" uid="uid://ndxqwg7imp40" path="res://Assets/Scene/Cutscene/DeathCutscene.tscn" id="3_hry1v"]
 [ext_resource type="Script" uid="uid://fbcyvkpfn8ic" path="res://src/GDScript/Core/ParticleStuff.gd" id="3_k2ahi"]
 [ext_resource type="PackedScene" uid="uid://cba5mrfc5a4mq" path="res://Assets/Scene/Particles/FoeHurtParticles.tscn" id="4_80yi4"]
 [ext_resource type="PackedScene" uid="uid://d1hg72grvoaqi" path="res://Assets/Scene/Particles/FoeDeadParticles.tscn" id="5_a0ynl"]
@@ -16,6 +17,7 @@ script = ExtResource("1_kp30x")
 
 [node name="UIMan" parent="." unique_id=956099145 node_paths=PackedStringArray("player") instance=ExtResource("2_hry1v")]
 player = NodePath("../Player")
+victoryCutscene = ExtResource("3_hry1v")
 
 [node name="ParticleMan" type="Node" parent="." unique_id=225829484 node_paths=PackedStringArray("gm", "pc")]
 script = ExtResource("3_k2ahi")

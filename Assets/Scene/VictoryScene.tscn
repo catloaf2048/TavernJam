@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://bbctgfv7k8sn1"]
+
+[sub_resource type="Gradient" id="Gradient_srscq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.99215686, 0.44705883, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2qit0"]
+gradient = SubResource("Gradient_srscq")
+width = 32
+height = 32
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Curve" id="Curve_6a8qh"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0reg4"]
+curve = SubResource("Curve_6a8qh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c03bj"]
+particle_flag_disable_z = true
+angle_min = -155.09999
+angle_max = 199.40001
+spread = 17.471
+initial_velocity_min = 369.22998
+initial_velocity_max = 615.38
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_0reg4")
+
+[sub_resource type="Gradient" id="Gradient_6a8qh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.99, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0reg4"]
+gradient = SubResource("Gradient_6a8qh")
+width = 32
+height = 32
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_c03bj"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.14849998, 0.99, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3xjsb"]
+gradient = SubResource("Gradient_c03bj")
+width = 32
+height = 32
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_n4ed8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.99, 0.99, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p6c5m"]
+gradient = SubResource("Gradient_n4ed8")
+width = 32
+height = 32
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xjsb"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[node name="VictoryScene" type="Node2D" unique_id=1630748803]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=131392106]
+position = Vector2(-592, 335.99997)
+rotation = -0.8237954
+amount = 10
+texture = SubResource("GradientTexture2D_2qit0")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=587432845]
+position = Vector2(-592, 335.99997)
+rotation = -0.8237954
+amount = 10
+texture = SubResource("GradientTexture2D_0reg4")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=1600446492]
+position = Vector2(600, 349)
+rotation = -2.4417157
+amount = 10
+texture = SubResource("GradientTexture2D_2qit0")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="." unique_id=103328401]
+position = Vector2(600, 349)
+rotation = -2.4417157
+amount = 10
+texture = SubResource("GradientTexture2D_0reg4")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="." unique_id=165980052]
+position = Vector2(-592, 335.99997)
+rotation = -0.8237954
+amount = 10
+texture = SubResource("GradientTexture2D_3xjsb")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="." unique_id=1831888903]
+position = Vector2(-592, 335.99997)
+rotation = -0.8237954
+amount = 10
+texture = SubResource("GradientTexture2D_p6c5m")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="." unique_id=2082440922]
+position = Vector2(600, 349)
+rotation = -2.4417157
+amount = 10
+texture = SubResource("GradientTexture2D_3xjsb")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="." unique_id=1552765650]
+position = Vector2(600, 349)
+rotation = -2.4417157
+amount = 10
+texture = SubResource("GradientTexture2D_p6c5m")
+lifetime = 2.3899999999999997
+explosiveness = 0.42
+process_material = SubResource("ParticleProcessMaterial_c03bj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1073145207]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=944029385]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -24.5
+offset_right = 118.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Congratulations, you survived.
+
+To be continued..."
+label_settings = SubResource("LabelSettings_3xjsb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1157184897]
