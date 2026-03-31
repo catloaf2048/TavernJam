@@ -7,3 +7,4 @@ size = Vector2(40, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1848292186]
 shape = SubResource("RectangleShape2D_i8htm")
+debug_color = Color(0.99999994, 0.0064012934, 0.0789349, 0.41960785)
