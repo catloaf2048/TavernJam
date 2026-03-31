@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bxgb7168w01fp"]
 
 [sub_resource type="Gradient" id="Gradient_jevpx"]
-colors = PackedColorArray(0.0648, 0.36, 0.13368002, 1, 0.13362998, 0.69, 0.1242, 1)
+colors = PackedColorArray(0.61, 0.061000016, 0.07014986, 1, 0.92, 0.14720003, 0.41767994, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fd6wf"]
 gradient = SubResource("Gradient_jevpx")
 width = 4
 height = 4
-fill_to = Vector2(1, 1)
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fmto2"]
 particle_flag_disable_z = true
