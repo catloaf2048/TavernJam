@@ -2,6 +2,7 @@ extends SimpleFoe
 	
 func HandleMovement(delta: float):
 	linear_velocity.x = lerp(linear_velocity.x, direction*speed, delta);
+	linear_velocity.y = 0;
 	pass;
 
 func HandleAnimation(delta: float):
