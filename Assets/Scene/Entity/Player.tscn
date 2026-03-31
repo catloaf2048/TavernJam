@@ -30,6 +30,7 @@ size = Vector2(15, 10)
 physics_material_override = SubResource("PhysicsMaterial_otfaf")
 lock_rotation = true
 script = ExtResource("1_otfaf")
+JUMP_VELOCITY = -600.0
 sprite = NodePath("Sprite2D")
 groundCheck = NodePath("GroundCheck")
 attack = NodePath("Attack")
@@ -54,10 +55,9 @@ position = Vector2(0, 15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck" unique_id=2101167627]
 shape = SubResource("RectangleShape2D_otfaf")
 
-[node name="Attack" type="Area2D" parent="." unique_id=1290807243 node_paths=PackedStringArray("hitbox", "timer")]
+[node name="Attack" type="Area2D" parent="." unique_id=1290807243 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("2_edcop")
 hitbox = NodePath(".")
-timer = NodePath("")
 targets = 2
 damage = 3
 
