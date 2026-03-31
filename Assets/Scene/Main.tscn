@@ -71,10 +71,10 @@ polygon = PackedVector2Array(-128, -0.5, -128, 0.5, 128, 0.5, 128, -0.5)
 position = Vector2(0, 64)
 
 [node name="FlyingFoe" parent="." unique_id=1626919217 instance=ExtResource("11_k2ahi")]
-position = Vector2(112, -64)
+position = Vector2(112, -40)
 
 [node name="WallCheckTrigger" parent="." unique_id=1200629283 instance=ExtResource("12_80yi4")]
-position = Vector2(256, -64)
+position = Vector2(256, -40)
 
 [node name="WallCheckTrigger2" parent="." unique_id=1968801080 instance=ExtResource("12_80yi4")]
-position = Vector2(0, -64)
+position = Vector2(0, -40)

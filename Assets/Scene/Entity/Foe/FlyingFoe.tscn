@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3w3cpgkjav2m" path="res://Assets/Scene/Entity/Foe/Foe.tscn" id="1_kwaue"]
 [ext_resource type="Script" uid="uid://d12kbk0pqx5rt" path="res://src/GDScript/Foes/FlyingFoe.gd" id="2_0wheh"]
 [ext_resource type="SpriteFrames" uid="uid://dkscexjhhb03r" path="res://Assets/Sprite/Foes/Cloudette/FlyingFoeSpriteFrames.tres" id="3_f0ffk"]
+[ext_resource type="Script" uid="uid://xdn22mhny8e2" path="res://src/GDScript/Attack.gd" id="4_yst7g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kwaue"]
 radius = 12.0
@@ -32,13 +33,20 @@ shape = SubResource("CircleShape2D_kwaue")
 visible = false
 
 [node name="CollisionShape2D" parent="Attack" parent_id_path=PackedInt32Array(2120066347) index="0" unique_id=887276156]
-shape = SubResource("RectangleShape2D_0wheh")
+shape = null
 
 [node name="atktimer" parent="Attack" parent_id_path=PackedInt32Array(2120066347) index="1" unique_id=830693418]
-wait_time = 4096.0
+wait_time = 0.05
 one_shot = true
-autostart = false
 
-[node name="atkCD" parent="." index="4" unique_id=1806007724]
+[node name="Attack2" type="Area2D" parent="." index="4" unique_id=11437451 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("4_yst7g")
+hitbox = NodePath(".")
+targets = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2" index="0" unique_id=72824549]
+shape = SubResource("RectangleShape2D_0wheh")
+
+[node name="atkCD" parent="." index="5" unique_id=1806007724]
 wait_time = 4096.0
 autostart = false
