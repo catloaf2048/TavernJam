@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b7mvqb8kx0dm2" path="res://Assets/Scene/Particles/ParticlePlaceholder.tscn" id="7_5qe47"]
 [ext_resource type="PackedScene" uid="uid://bcdn0bl2u0o6m" path="res://Assets/Scene/Entity/Player.tscn" id="8_ggcfg"]
 [ext_resource type="PackedScene" uid="uid://bu2xcv3srog0u" path="res://Assets/Scene/World.tscn" id="10_ftb8j"]
-[ext_resource type="PackedScene" uid="uid://cplecxkf0sc2g" path="res://Assets/Scene/Entity/Foe/FlyingFoe.tscn" id="11_k2ahi"]
-[ext_resource type="PackedScene" uid="uid://dbnl70ig72pwn" path="res://Assets/Scene/World/WallCheckTrigger.tscn" id="12_80yi4"]
 
 [node name="GameManager" type="Node" unique_id=292124961]
 script = ExtResource("1_kp30x")
@@ -34,12 +32,3 @@ unique_name_in_owner = true
 
 [node name="World" parent="." unique_id=1618281570 instance=ExtResource("10_ftb8j")]
 position = Vector2(0, 64)
-
-[node name="FlyingFoe" parent="." unique_id=1626919217 instance=ExtResource("11_k2ahi")]
-position = Vector2(112, -40)
-
-[node name="WallCheckTrigger" parent="." unique_id=1200629283 instance=ExtResource("12_80yi4")]
-position = Vector2(256, -40)
-
-[node name="WallCheckTrigger2" parent="." unique_id=1968801080 instance=ExtResource("12_80yi4")]
-position = Vector2(0, -40)
